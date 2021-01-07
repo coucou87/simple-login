@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "dee204ea-437b-4365-a844-9dff91dffca2",
+		"name": "task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "verify username",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "registered",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "language_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "app",
+							"value": "pros",
+							"description": "in:care,pros,admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/verify",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh_token",
+							"value": "def50200f164328ccd7a7694e00b323e0cc305053e8e66f7e2080173c831baac8c0ac1b972f6c0352054da23742626a56c9fdcaffab2278c8551ac544a21b41348bc0e830b228a5ab1923fea60aaf594c9273faf924e0f08974f371646ce4b27b698339bdb391284593ea3a5b8b503ae098ef859d705a68c087dce6c1896d5f7e99d056c8113064eeed1442dd4f29ceaea9f9e13b20379b5788049678ebaee912a8005648fc651895e792bb7f975ecf0a6ead44dd6b2f0bbbe41daf30d2dc82f5d70594e6f8249cb71854a6d4a37dfb16a299765021d46c8d031c252f7938fbd31ca693058401a048a0c7d76e206b140c426a8c8cb96717cf6e14b18dfa9b985018b0f16b8ffe9eb4f45e4e4f22394952239f5fbc5a7489cd207689fe6f58b147c34e1ebed75978adbe217b3591aeb36c62874d342179c0ccfffec9347f6072dca90ea992c49dd22d4ceda6de7d384aad68d6d217fc649883269e8894293c9f24d53",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/refresh",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check username",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "",
+							"description": "username|mobile|email",
+							"type": "text"
+						},
+						{
+							"key": "app",
+							"value": "pros",
+							"description": "in:care,pros,admin",
+							"type": "text"
+						},
+						{
+							"key": "send_code",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/check",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "model",
+							"value": "j7",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "web",
+							"description": "in:web,android,ios",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/logout",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forget verify - verify code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "09100046370",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1934",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/verify_code",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"verify_code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forget - send code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "09369180167",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "send_code",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/send_code",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"send_code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "languages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/languages",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_gateway}}/general/v1/users/auth",
+					"host": [
+						"{{api_gateway}}"
+					],
+					"path": [
+						"general",
+						"v1",
+						"users",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
