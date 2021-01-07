@@ -19,6 +19,8 @@ export default function Login() {
 
     return (
    
+
+        
         <form onSubmit={UseDataFetching("api.behzee.com")}>
             {console.log(data)}
             <label>Username</label>
