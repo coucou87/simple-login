@@ -5,8 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
+  
+}
+@font-face {
+  font-family: 'IRANsans';
+  src: local('IRANsans'), url(/src/constants/font/Iranian-Sans.ttf) format('truetype');
+  font-weight: 300;
+  font-size: 15px;
+  font-style: bold;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

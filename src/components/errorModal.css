@@ -1,0 +1,18 @@
+.error-container{
+    display: flex;
+    justify-content: center;
+}
+
+.error-wrapper{
+    margin: 20px;
+    border:#e0e0e2 1px solid;
+    padding: 20px ;
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+    max-width: 500px;
+    width: 300px;
+    align-self: center;
+    z-index: 100;
+    background-color: red;
+}

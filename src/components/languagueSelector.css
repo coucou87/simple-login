@@ -1,0 +1,24 @@
+.select{
+    width: 140px;
+    height: 35px;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px #999;
+    background: #eee;
+    border: none;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    margin: 15px 0 0 65px; 
+    
+}
+
+.xxx{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:220px;
+}

@@ -1,0 +1,35 @@
+.home-wrapper{
+    display:flex;
+    flex-direction: column ;
+    margin: 20px;
+    border:#e0e0e2 1px solid;
+    padding: 20px ;
+    border-radius: 10px;
+    position: absolute;
+    top:20%;
+    left:35%;
+    justify-content: center;
+    max-width: 100%;
+    width: 300px;
+    column-gap: 20px;
+    align-self: center;
+    background-color:#cfcccc;
+}
+
+/* .header{
+  display: flex;
+  justify-content: center;
+} */
+.lang-text{
+     display: flex;
+     justify-content: center;
+}
+.lang-select{
+    margin-right: 20px;
+    font-family: IRANsans, serif;
+    width:60%;
+    
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
