@@ -1,20 +1,27 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export default function UseDataFetching(dataSource) {
+export default function useDataFetching(dataSource) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
 
-
   useEffect(() => {
-    async function fetchData(dataSource) {
+    (async function () {
       try {
-        const data = await fetch(dataSource);
+        const data = await fetch(dataSource , {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+               //myData
+            })
+        });
         const json = await data.json();
 
         if (json) {
           setLoading(false);
-          setData(alert(json));
+          setData(json);
         }
       } catch (error) {
         setLoading(false);
@@ -22,9 +29,7 @@ export default function UseDataFetching(dataSource) {
       }
 
       setLoading(false);
-    }
-
-    fetchData();
+    })()
   }, [dataSource]);
 
   return {

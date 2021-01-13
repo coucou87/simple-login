@@ -1,0 +1,16 @@
+.language-select{
+    margin: 20px 0 0 0 ;
+    padding: 10px ;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px #999;
+    background: #eee;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;  
+    padding-left: 28%;
+    padding-right: 37%;
+}
+

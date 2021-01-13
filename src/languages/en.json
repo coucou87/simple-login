@@ -1,0 +1,18 @@
+{
+  "username-error": "Error",
+  "enter-user": "Enter user",
+  "register-btn": "Register",
+  "server-error-500": "!Internet disconnected",
+  "fullname": "Fullname:",
+  "name": "Name:",
+  "username": "Username:",
+  "code": "Code:",
+  "back-btn": "Back",
+  "choose-language" : "Choose your Language",
+  "welcome" : "Welcome To Behzee Website",
+  "max-length-20-error-message": "Maximum length is 20 character.",
+  "register-input": "Please enter your phonenumber or email.",
+  "exit-btn" : "Exit",
+  "logout-btn":"Log out",
+  "information": "Your panel"
+}
