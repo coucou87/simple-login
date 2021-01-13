@@ -1,25 +1,33 @@
-
-import { useState } from 'react'
-import { Router, Switch, Route, Redirect  } from "react-router-dom";
-import Register from './components/Register'
-import SendCode from './components/SendCode'
-import history from './components/history';
-import Home from './components/Home'
-import Welcome from './components/Welcome'
-import { LanguageProvider } from './components/language/Language';
-import Authenticated from './components/Authenticated'
+import { useState, useEffect } from 'react';
+import { Router, Switch, Route, Redirect } from "react-router-dom";
+import Register from './components/register/Register';
+import SendCode from './components/sendCode/SendCode';
+import history from './components/history/history';
+import Home from './components/home/Home';
+import { LanguageProvider } from './components/language/language';
+import Authenticated from './components/authenticated/Authenticated';
+import Cookies from 'universal-cookie';
 
 export default function App() {
   const [model, setModel] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const cookie = new Cookies()
   const getModel = (data) => setModel(data);
-  const login = () => {
-    setIsAuthenticated(!isAuthenticated)
-  }
-  
-  return (
 
+  {
+    const token = cookie.get('token')
+    useEffect(() => {
+      if (token !== '')
+        setIsAuthenticated(true)
+    }, [token])
+  }
+
+  const login = () => {
+    setIsAuthenticated(true)
+  }
+
+  return (
     <div className="app-container">
       <LanguageProvider>
         <Router history={history}>
@@ -29,13 +37,12 @@ export default function App() {
               <Register getModel={getModel} />
             </Route>
             <Route path="/SendCode" >
-              <SendCode model={model} login={login}/>
+              <SendCode model={model} login={login} />
             </Route>
             {isAuthenticated ?
-              <Route path="/Auth" component={Authenticated} getModel={getModel}/>
-              : <Redirect to='/Register' /> 
-            } 
-            <Route path="/Welcome" component={Welcome} />
+              <Route path="/Auth" component={Authenticated} getModel={getModel} />
+              : <Redirect to='/Register' />
+            }
           </Switch>
         </Router>
       </LanguageProvider>

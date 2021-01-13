@@ -1,45 +1,40 @@
-// import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-// export default function UseDataFetching(dataSource,username,app) {
-//   const [loading, setLoading] = useState(true);
-//   const [data, setData] = useState([]);
-//   const [error, setError] = useState("");
+export default function useDataFetching(dataSource) {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState("");
 
+  useEffect(() => {
+    (async function () {
+      try {
+        const data = await fetch(dataSource , {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+               //myData
+            })
+        });
+        const json = await data.json();
 
-//   useEffect(() => {
-//     {alert(username)
-//     alert(app)}
-//     async function fetchData(dataSource) {
+        if (json) {
+          setLoading(false);
+          setData(json);
+        }
+      } catch (error) {
+        setLoading(false);
+        setError(error.message);
+      }
 
-//       try {
-//         const data = await fetch(dataSource + "/general/v1/users/check") 
-//         // { method: 'post',
-//           // headers: { "Content-Type": 'application/json'},
-//           // body: {
-//           //   "username": username,
-//           //   "app": app
-//           // }
-//         // };
-//         const json = await data.json();
+      setLoading(false);
+    })()
+  }, [dataSource]);
 
-//         if (json) {
-//           setLoading(false);
-//           setData(alert(json));
-//         }
-//       } catch (error) {
-//         setLoading(false);
-//         setError(error.message);
-//       }
-
-//       setLoading(false);
-//     }
-
-//     fetchData();
-//   }, [dataSource]);
-
-//   return {
-//     error,
-//     loading,
-//     data
-//   };
-// }
+  return {
+    error,
+    loading,
+    data
+  };
+}

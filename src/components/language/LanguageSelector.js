@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { languageOptions } from '../../languages';
-import { LanguageContext } from './Language';
+import { LanguageContext } from './language';
 import Cookies from 'universal-cookie';
-// import '../languageSelector.css';
+import './languageSelector.css';
 
 export default function LanguageSelector() {
   const { userLanguage, userLanguageChange } = useContext(LanguageContext);
@@ -10,23 +10,24 @@ export default function LanguageSelector() {
 
   // set selected language by calling context method
   const handleLanguageChange = e => userLanguageChange(e.target.value);
-
+  
+  let defaultLanguage = cookie.get('lang');
   useEffect(() => {
-    let defaultLanguage = cookie.get('lang');
+   
     if (!defaultLanguage) {
-      cookie.set('dir', defaultLanguage === 'en' ? 'ltr' : 'rtl');
+      cookie.set('dir', defaultLanguage === 'fa' ? 'rtl' : 'ltr');
       defaultLanguage = window.navigator.language.substring(0, 2);
     }
     userLanguageChange(defaultLanguage);
   }, [userLanguageChange, cookie]);
 
   return (
-    <select className="xxx"
+    <select className="language-select"
       onChange={handleLanguageChange}
       value={userLanguage}
     >
       {Object.entries(languageOptions).map(([id, name]) => (
-        <option key={id} value={id} className="xxx">{name}</option>
+        <option key={id} value={id} >{name}</option>
       ))}
     </select>
   );

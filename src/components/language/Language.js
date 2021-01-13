@@ -5,23 +5,26 @@ import Cookies from 'universal-cookie';
 
 // create the language context with default selected language
 export const LanguageContext = createContext({
-  userLanguage: 'en',
-  dictionary: dictionaryList.en
+  userLanguage: 'fa',
+  dictionary: dictionaryList.fa
 });
 
 
 // it provides the language context to app
 export function LanguageProvider({ children }) {
-  const [userLanguage, setUserLanguage] = useState('en');
+  const [userLanguage, setUserLanguage] = useState('fa');
   const cookie = new Cookies();
 
   const provider = {
     userLanguage,
     dictionary: dictionaryList[userLanguage],
     userLanguageChange: selected => {
-      const newLanguage = languageOptions[selected] ? selected : 'en'
+      if(cookie.get('lang') === undefined){
+        selected = 'fa'
+      }
+      const newLanguage = languageOptions[selected] ? selected : 'fa'
       setUserLanguage(newLanguage);
-      cookie.set('dir', newLanguage === 'en' ? 'ltr' : 'rtl' ,{ path: '/'})
+      cookie.set('dir', newLanguage === 'fa' ? 'rtl' : 'ltr' ,{ path: '/'})
       cookie.set('lang', newLanguage , { path: '/'});
     }
   };

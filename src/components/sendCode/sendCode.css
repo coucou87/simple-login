@@ -1,4 +1,9 @@
-.form{
+.sendcode-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sendcode-form{
     display:flex;
     flex-direction: column ;
     margin: 20px;
@@ -6,17 +11,18 @@
     padding: 20px ;
     border-radius: 10px;
     position: absolute;
-    top:20%;
-    left:35%;
-    justify-content: center;
-    max-width: 100%;
-    width: 300px;
-    column-gap: 20px;
+    left: 0;
+    right: 0;
+    top: 20%;
+    margin-left: auto;
+    margin-right: auto;
     align-self: center;
-    
+    background-color:#cfcccc;
+    max-width: 250px;
+    width: 80%;
+    background-color:#cfcccc;  
 }
-
-.input{
+.sendcode-disabled-input{
     border: #e0e0e2 1px solid;
     border-radius: 10px;
     padding:10px;
@@ -24,6 +30,8 @@
     direction: rtl;
     box-sizing: border-box;
     outline: none; 
+    margin-left: 7.5%;
+    margin-right: 7.5%;
 }
 .Logo{
     display: block;
