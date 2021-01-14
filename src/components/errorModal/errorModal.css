@@ -14,8 +14,14 @@
     width: 300px;
     align-self: center;
     z-index: 100;
-    background-color: red;
+    background-color: rgb(224, 190, 190); 
+}
+.error-wrapper p{
+ color: red;
 }
 .error-modal-btn{
-    
+    background-color:white;
+    border-radius: 5px;
+    border:none;
+    padding: 7px;
 }

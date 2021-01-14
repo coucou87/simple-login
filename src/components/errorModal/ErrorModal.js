@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './errorModal.css';
 import Cookies from 'universal-cookie';
-import Button from '../button/Button';
 
 export default function ErrorModal({ errorTxt, handleClose }) {
     const cookie = new Cookies();
-    const [direction, setDirection] = useState('rtl');
-
-    useEffect(() => {
-        setDirection(cookie.get('dir'))
-    }, [cookie])
+    const getDirection = () => { return cookie.get('dir') }
 
     return (
         <div className="error-container">
-            <div style={{ direction: direction }} className="error-wrapper">
-                <Button onClick={handleClose} className="error-modal-btn"> X </Button>
+            <div style={{ direction: getDirection() }} className="error-wrapper">
+                <button onClick={handleClose} className="error-modal-btn"> X </button>
                 <p>{errorTxt}</p>
             </div>
         </div>
