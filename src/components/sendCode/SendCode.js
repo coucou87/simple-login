@@ -80,7 +80,6 @@ export default function SendCode({ model, login }) {
                         ref={register({ required: true })}
                         onChange={(e) => setCode(e.target.value)}
                     />
-
                     <Button >
                         {<Text tid="register-btn" />}
                     </Button>

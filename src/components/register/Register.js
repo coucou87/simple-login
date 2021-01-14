@@ -8,6 +8,7 @@ import ErrorModal from '../errorModal/ErrorModal';
 import Cookies from 'universal-cookie';
 import Logo from '../../constants/images/logo.png';
 import Button from '../button/Button';
+import {useDataFetching} from '../../HOOKS/UseDataFetching'
 
 export default function Register({ getModel }) {
     const [username, setUsername] = useState('')
@@ -24,6 +25,9 @@ export default function Register({ getModel }) {
             case ('fa'): return "1"
         }
     }
+
+
+
     const onSubmit = (data) => {
         fetch(`${baseUrl}/${registerEndPoint}`, {
             method: 'POST',

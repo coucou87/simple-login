@@ -6,13 +6,12 @@
    right: 0;
    margin: 20px;
    max-width: 100%;
-   width: 200px;
+   width: 250px;
    font-weight: bold;
    align-self: center;
    background-color:#cfcccc;
    display:flex;
-   flex-direction: column;
-    
+   flex-direction: column;  
 }
 .auth-container{
    direction: rtl;
@@ -20,4 +19,7 @@
 .auth-btn-container{
    display: flex;
    justify-content: center;
+}
+.auth-btn-container button{
+  font-size: 14px;
 }

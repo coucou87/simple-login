@@ -17,8 +17,8 @@ export default function App() {
 
   {
     const token = cookie.get('token')
-    useEffect(() => {
-      if (token !== '')
+      useEffect(() => {
+        if (token !== '')
         setIsAuthenticated(true)
     }, [token])
   }
@@ -49,5 +49,3 @@ export default function App() {
     </div>
   )
 }
-
-

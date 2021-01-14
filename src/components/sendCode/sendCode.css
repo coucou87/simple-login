@@ -40,3 +40,6 @@
     width: 80px;
     height: auto;
 }
+.sendcode-form label{
+    margin:0 18px;
+}
