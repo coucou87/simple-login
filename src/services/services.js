@@ -1,8 +1,8 @@
 import http from "axios";
-import {registerEndPoint} from '../../constants/api';
-import {verifyEndPoint} from '../../constants/api';
-import {authEndPoint} from '../../constants/api';
-import {baseUrl} from '../../constants/api';
+import {registerEndPoint} from '../constants/api';
+import {verifyEndPoint} from '../constants/api';
+import {authEndPoint} from '../constants/api';
+import {baseUrl} from '../constants/api';
 
 
 export function register() {
