@@ -4,7 +4,7 @@ import Register from './components/register/Register';
 import SendCode from './components/sendCode/SendCode';
 import history from './components/history/history';
 import Home from './components/home/Home';
-import { Language } from './components/language/language';
+import { LanguageProvider } from './components/container/language';
 import Authenticated from './components/authenticated/Authenticated';
 import Cookies from 'universal-cookie';
 
@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <Language>
+      <LanguageProvider>
         <Router history={history}>
           <Switch>
             <Route path="/" exact component={Home} />
@@ -45,7 +45,7 @@ export default function App() {
             }
           </Switch>
         </Router>
-      </Language>
+      </LanguageProvider>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import history from '../history/history'
-import { Text } from '../language/language';
-import LanguageSelector from '../language/LanguageSelector';
+import { Text } from '../container/language';
+import LanguageSelector from '../LanguageSelector';
 import Button from '../button/Button';
 import Cookies from 'universal-cookie';
 import './home.css';

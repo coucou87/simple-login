@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import history from '../history/history';
 import { baseUrl, registerEndPoint } from '../../constants/api';
-import { Text } from '../language/language';
+import { Text } from '../container/language';
 import './register.css';
 import ErrorModal from '../errorModal/ErrorModal';
 import Cookies from 'universal-cookie';

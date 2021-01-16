@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { baseUrl, authEndPoint } from '../../constants/api';
 import history from '../history/history';
-import { Text } from '../language/language';
+import { Text, LanguageContext  } from '../container/language';
 import Cookies from 'universal-cookie';
 import ErrorModal from '../errorModal/ErrorModal';
 import Button from '../button/Button';
@@ -10,6 +10,7 @@ import Loader from '../loader/Loader';
 import './authenticated.css';
 
 export default function Authenticated() {
+    const { dictionary } = useContext(LanguageContext);
     const [fullname, setFullname] = useState('')
     const [name, setName] = useState('')
     const [username, setUsername] = useState('')
@@ -57,7 +58,7 @@ export default function Authenticated() {
 
     return (
         <>
-          
+          {dictionary.enterText}
             {showModal && <ErrorModal errorTxt={errorMessage} handleClose={handleClose} />}
             <div className="auth-wrapper">
                 <Table name={name} fullname={fullname} username={username} />

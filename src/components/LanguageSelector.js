@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import { languageOptions } from '../../languages';
-import { LanguageContext } from './language';
+import { languageOptions } from '../languages';
+import { LanguageContext } from './container/language';
 import Cookies from 'universal-cookie';
 import './languageSelector.css';
 

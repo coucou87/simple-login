@@ -11,7 +11,7 @@ export const LanguageContext = createContext({
 
 
 // it provides the language context to app
-export function Language({ children }) {
+export function LanguageProvider({ children }) {
   const [userLanguage, setUserLanguage] = useState('fa');
   const cookie = new Cookies();
 
