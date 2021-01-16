@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from '../language/language';
+import { Text } from '../container/language';
 import { baseUrl, verifyEndPoint } from '../../constants/api';
 import { useForm } from 'react-hook-form';
 import ErrorModal from '../errorModal/ErrorModal';

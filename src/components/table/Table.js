@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '../language/language';
+import { Text } from '../container/language';
 import Cookies from 'universal-cookie';
 import './table.css';
 
