@@ -14,6 +14,7 @@
     "universal-cookie": "^4.0.4",
     "web-vitals": "^0.2.4"
   },
+  "homepage": "https://coucou87.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
